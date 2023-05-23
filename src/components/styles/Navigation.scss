@@ -1,0 +1,101 @@
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&family=Ubuntu:wght@300;400;500;700&display=swap');
+
+  header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 80px;
+	padding: 0 1rem;
+
+	background-color: var(--mainColor);
+	color: var(--textColor);
+	font-family: 'Montserrat';
+
+	@mixin nav-buttons{
+	  display: none;
+	  border: none;
+	  padding: 8px;
+	  background-color: white;
+	}
+	.open-btn{
+		@include nav-buttons()
+	}
+	.close-btn{
+		@include nav-buttons()
+	}
+
+	h3{
+	  font-size: 22px;
+	}
+
+	nav{
+	 font-size: 18px;
+		a{
+			margin: 0 1.5rem;
+			color: var(--textColor);
+			text-decoration: none;
+			&:hover {
+				color: var(--secondaryColor);
+			}	
+		}
+	  #login{
+		color: var(--secondaryColor);
+		opacity: 0.6;
+	  }
+
+	.new-account-btn{
+		border-radius: 25px;
+		border: none;
+		background-color: var(--secondaryColor);
+		opacity: 0.6;
+		color: white;
+	    padding: 12px 21px;
+		font-size: 18px;
+
+		&:hover{
+		opacity: 1;
+		}
+	}
+ }
+}
+
+
+@media only screen and (max-width: 1024px) {
+	header {
+
+	nav{
+		display: none;
+	}
+	.open-btn{
+		display: flex;
+	}
+	.close-btn{
+		display: flex;
+	}
+	
+	.new-account-btn{
+     width: 180px;
+	 margin-left: 20px;
+
+	}
+	.mobile-nav {
+			position: absolute;
+			top: 80px;
+			left: 0px;
+			height: 100%;
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: left;
+			justify-content: flex-start;
+			gap: 30px;
+			background-color: var(--mainColor);
+			transition: 1s;
+
+			a {
+				font-size: 18px;
+				margin-left: 20px;
+			}
+		}
+	}
+}
